@@ -1,3 +1,3 @@
 <template>
-  <router-view />
+  <div>css-editor</div>
 </template>
