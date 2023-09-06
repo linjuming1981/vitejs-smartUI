@@ -6,4 +6,4 @@ import routers from './routers.js';
 const app = createApp(App);
 app.use(routers);
 
-createApp(App).mount('#app');
+app.mount('#app');
