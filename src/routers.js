@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-export default {
+export default createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
@@ -14,4 +14,4 @@ export default {
       component: () => import('@/view/css-editor/css-editor.vue'),
     },
   ],
-};
+});
