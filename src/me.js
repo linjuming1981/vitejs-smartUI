@@ -11,3 +11,4 @@ src/components/echarts
     
 
 */
+log
