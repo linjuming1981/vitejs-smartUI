@@ -18,4 +18,11 @@ export default defineConfig({
       BASE_URL: '',
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/styles/mixin.scss";',
+      },
+    },
+  },
 });

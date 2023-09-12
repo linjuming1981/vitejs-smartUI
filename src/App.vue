@@ -1,6 +1,12 @@
 <template>
   <div>
-    <div>11111112221</div>
+    <div class="routes">
+      <ul>
+        <li v-for="(n, i) in routes" :key="i" @click="goToRouter(n.path)">
+          {{ n.name }}
+        </li>
+      </ul>
+    </div>
     <router-view />
   </div>
 </template>
@@ -8,12 +14,37 @@
 import { useRouter } from 'vue-router';
 export default {
   data() {
-    return {};
+    return {
+      routes: [],
+    };
   },
   mounted() {
-    const router = useRouter();
-    const routes = router.getRoutes();
-    console.log(11111, routes);
+    this.initRouteDatas();
+  },
+  methods: {
+    initRouteDatas() {
+      const router = useRouter();
+      const routes = router.getRoutes();
+      this.routes = routes;
+    },
+    goToRouter(path) {
+      this.$router.push(path);
+    },
   },
 };
 </script>
+<style lang="scss" scoped>
+.routes {
+  color: tan;
+  background-color: rgba(0, 0, 0, 0.9);
+  ul {
+    display: flex;
+    padding-left: 10px;
+    li {
+      list-style: none;
+      padding: 3px 10px;
+      cursor: pointer;
+    }
+  }
+}
+</style>
