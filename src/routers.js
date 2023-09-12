@@ -15,5 +15,11 @@ export default createRouter({
       meta: { title: 'css编辑器' },
       component: () => import('@/view/css-editor/css-editor.vue'),
     },
+    {
+      name: 'echarts',
+      path: '/echarts',
+      meta: { title: 'echarts图表' },
+      component: () => import('@/view/echarts/echarts.vue'),
+    },
   ],
 });
