@@ -3,11 +3,14 @@
 </template>
 
 <script>
-import { EditorState, basicSetup } from '@codemirror/basic-setup';
-import { EditorView, keymap } from '@codemirror/view';
+import { basicSetup, EditorView, minimalSetup } from 'codemirror';
+import { EditorState } from '@codemirror/state';
+import { keymap } from '@codemirror/view';
 import { css } from '@codemirror/lang-css';
-import '@codemirror/view/style.css';
-import '@codemirror/theme/material.css';
+import { javascript } from '@codemirror/lang-javascript';
+import { basicSetup, EditorView } from 'codemirror';
+import { EditorState, Compartment } from '@codemirror/state';
+import { python } from '@codemirror/lang-python';
 
 export default {
   props: {
@@ -21,13 +24,28 @@ export default {
       code: '',
     };
   },
-  mounted() {},
+  mounted() {
+    this.test();
+  },
   methods: {
+    test() {
+      let editor = new EditorView({
+        extensions: [basicSetup, css()],
+        parent: this.$el,
+      });
+    },
+
     initEditor() {
+      // new EditorView({
+      //   doc: "...",
+      //   extensions: minimalSetup,
+      //   parent: this.$el,
+      // })
+
       const editorState = EditorState.create({
         doc: this.modelValue,
         extensions: [
-          basicSetup,
+          // basicSetup,
           keymap.of([EditorView.defaultTabBinding]),
           css(),
         ],
