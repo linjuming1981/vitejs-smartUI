@@ -7,10 +7,6 @@ import { basicSetup, EditorView, minimalSetup } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 import { keymap } from '@codemirror/view';
 import { css } from '@codemirror/lang-css';
-import { javascript } from '@codemirror/lang-javascript';
-import { basicSetup, EditorView } from 'codemirror';
-import { EditorState, Compartment } from '@codemirror/state';
-import { python } from '@codemirror/lang-python';
 
 export default {
   props: {
