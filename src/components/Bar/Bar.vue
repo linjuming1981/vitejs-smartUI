@@ -3,7 +3,9 @@
 </template>
 <script>
 import * as echarts from 'echarts';
+import compMixin from '@/mixins/compMixin.js';
 export default {
+  mixins: [compMixin],
   components: {},
   props: {},
   data() {
@@ -12,12 +14,15 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {
-    this.renderChart();
-  },
+  mounted() {},
   methods: {
-    renderChart() {
-      const myChart = echarts.init(this.$el);
+    setConfig(config) {
+      this.config = config;
+    },
+    mount() {},
+    renderChart(el) {
+      el = el || this.$el;
+      const myChart = echarts.init(el);
       const options = {
         legend: {},
         tooltip: {},

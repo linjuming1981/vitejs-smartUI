@@ -21,7 +21,9 @@ mock / modckData.js;
 
 import Comps from 'xxx';
 Comps['bar1']
-  .setOption({
+  .setConfig({
     dataApi: 'https://xxx/yyyy',
   })
   .mount('#hello');
+
+import MyApp = createApp()

@@ -1,6 +1,6 @@
 <template>
   <div class="wBox">
-    <Bar />
+    <Bar ref="Bar" />
   </div>
 </template>
 <script>
@@ -16,7 +16,9 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.$refs.Bar.renderChart();
+  },
   methods: {},
 };
 </script>
