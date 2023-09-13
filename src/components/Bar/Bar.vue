@@ -12,7 +12,9 @@ export default {
   computed: {},
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    console.log(111);
+  },
   methods: {
     renderChart() {
       const myChart = echarts.init(this.$el);
