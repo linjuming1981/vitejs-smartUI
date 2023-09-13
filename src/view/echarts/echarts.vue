@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wBox">
     <Bar />
   </div>
 </template>
@@ -20,4 +20,9 @@ export default {
   methods: {},
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.wBox {
+  width: 300px;
+  height: 300px;
+}
+</style>

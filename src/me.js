@@ -11,4 +11,17 @@ src/components/echarts
     
 
 */
-log
+
+提供数据接口;
+使用mock;
+
+components / Bar;
+
+mock / modckData.js;
+
+import Comps from 'xxx';
+Comps['bar1']
+  .setOption({
+    dataApi: 'https://xxx/yyyy',
+  })
+  .mount('#hello');
