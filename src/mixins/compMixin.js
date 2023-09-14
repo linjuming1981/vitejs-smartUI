@@ -1,4 +1,5 @@
 import { createApp, h } from 'vue';
+import Request from '@/utils/Request.js';
 export default {
   props: {},
   data() {
@@ -10,6 +11,7 @@ export default {
   methods: {
     setConfig(config) {
       this.config = config;
+      return this;
     },
     mount(el) {
       if (typeof el === 'string') {
@@ -18,6 +20,12 @@ export default {
       if (this.wgType === 'echart') {
         this.renderChart(el);
       }
+    },
+    async getApiData() {
+      const res = await Request.get({
+        url: this.config.dataApiUrl,
+      });
+      return res.data.data;
     },
   },
 };

@@ -1,5 +1,5 @@
 const commonItem = {
-  serie: '@word(4, 6)',
+  serie: '@city',
   'value|300-500': 1,
   'date_time|': '@date',
   'int_100|0-100': 1,

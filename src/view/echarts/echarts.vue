@@ -17,9 +17,18 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    this.$refs.Bar.renderChart();
+    this.loadChart('Bar');
   },
-  methods: {},
+  methods: {
+    loadChart(name) {
+      let comp = this.$refs[name];
+      comp
+        .setConfig({
+          dataApiUrl: '/mock/common',
+        })
+        .mount();
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
